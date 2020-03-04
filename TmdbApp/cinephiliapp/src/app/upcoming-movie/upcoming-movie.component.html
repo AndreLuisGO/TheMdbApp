@@ -1,1 +1,20 @@
-<p>upcoming-movie works!</p>
+
+<div class="container">
+    <div *ngIf="movies" class="wrapper" else no_result>
+
+        <div class="row ">
+
+            <div *ngFor="let movie of movies.results | slice:0:11" class="col-sm-3 col-md-3  col-xs-10 col-xs-offset-1 data-div">
+                <a routerLink="/detail/{{movie.Id}}">
+                    <img src="https://image.tmdb.org/t/p/w500/{{movie.PosterPath}}" alt="poster" max-width="200px"
+                        min-height="150px" class="img img-responsive " />
+                    <div class="movie-list-descrip">
+                        <span>{{ movie.ReleaseDate | date: "y"}}</span>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <ng-template #no_result>No result found</ng-template>
+</div>
