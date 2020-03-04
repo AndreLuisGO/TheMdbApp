@@ -59,5 +59,23 @@ namespace TmdbService.Libs.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1f54bd990f1cdfb230adb312546d765d.
+        /// </summary>
+        internal static string apiKey {
+            get {
+                return ResourceManager.GetString("apiKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://api.themoviedb.org/3/.
+        /// </summary>
+        internal static string baseUrl {
+            get {
+                return ResourceManager.GetString("baseUrl", resourceCulture);
+            }
+        }
     }
 }

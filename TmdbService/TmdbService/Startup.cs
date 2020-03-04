@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 
-
 namespace TmdbService
 {
    public class Startup
@@ -13,6 +12,7 @@ namespace TmdbService
       public void ConfigureServices(IServiceCollection services)
       {
          services.AddMvc();
+         services.AddSingleton<Libs.Services.ITmbdService, Libs.Services.TmdbService>();
          services.AddMvcCore().AddApiExplorer();
          services.AddSwaggerGen(c =>
          {
@@ -35,7 +35,7 @@ namespace TmdbService
          app.UseSwaggerUI(c =>
          {
             c.SwaggerEndpoint("/swagger/v1/swagger.json",
-                  "Cinephilia App Api Backend ");
+                  "TheMDB App Api Backend ");
             c.RoutePrefix = string.Empty;
          });
 
