@@ -26,6 +26,7 @@ export class UpcomingMovieComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getUpcomingMovies(1);
   }
 
 }
