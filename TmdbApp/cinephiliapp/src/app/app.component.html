@@ -1,3 +1,21 @@
-<app-search-movie></app-search-movie>
-<app-upcoming-movie></app-upcoming-movie>
-<app-movie-details></app-movie-details>
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" routerLink="/">{{title}}</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#"> Home <span class="sr-only">(current)</span></a></li>
+      </ul>
+      <app-search-movie></app-search-movie>
+    </div>
+
+  </div>
+</nav>
+<router-outlet></router-outlet>
+<hr>
+<footer>
+  <p class="text-center"> &copy; {{title}} - Powered by <a href="http://themoviedb.org" target="_blank"> TheMovieDB</a>
+  </p>
+</footer>

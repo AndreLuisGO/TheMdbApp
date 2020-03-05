@@ -6,8 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TmdbService {
   private baseUrl ="https://localhost:44396/api/v1/tmdb";
-  private movieRoute = "/movie"
-  private upcomingRoute = "/upcoming/";
+  private movieRoute = "/movie/"
+  private upcomingRoute = "upcoming/";
   private searchRoute = "/search";
   private pageRoute = "?page="
   
@@ -20,12 +20,12 @@ export class TmdbService {
   }
 
   getMovie(id: number) {
-    const apiUrl = this.baseUrl + this.movieRoute + '/' + id;
+    const apiUrl = this.baseUrl + this.movieRoute + id;
     return this.http.get(apiUrl);
   }
 
-  searchMovie(term: string, page: number) {
-    const apiUrl = this.baseUrl + this.searchRoute + this.movieRoute + term + this.pageRoute + page;
+  searchMovie(term: string) {
+    const apiUrl = this.baseUrl + this.searchRoute + this.movieRoute + term + this.pageRoute + 1;
     return this.http.get(apiUrl);
   }
 }

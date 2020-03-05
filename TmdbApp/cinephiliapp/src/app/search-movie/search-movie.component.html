@@ -1,1 +1,35 @@
-<p>search-movie works!</p>
+<div class="pull-right search-div">
+    <input #searchBox type="text" class="form-control search-box" placeholder="search">
+    <span class="input-group-btn">
+        <button (click)="searchMovie(searchBox.value)" class="btn btn-default search-button">Search</button>
+    </span>
+</div>
+
+<div *ngIf="movies" else no_result>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>Search Results: </h3>
+        </div>
+        <div class="panel-body">
+            <div *ngIf="movies" class="wrapper" else no_result>
+                <div class="container">
+
+                    <div class="row ">
+                        <div *ngFor="let movie of movies.results" class="col-xl-2 col-lg-3 col-md-4 col-sm-12 data-div">
+
+                            <a href="#" routerLink="/movie/{{movie.id}}">
+                                <img *ngIf="movie.poster_path" class="img-thumbnail"
+                                    src="https://image.tmdb.org/t/p/w185/{{movie.poster_path}}">
+                                <img *ngIf="!movie.poster_path" class="img-thumbnail"
+                                    src="http://http://ddbu.billiardport.com/img/posters/no_poster_available.jpg">
+                            </a>
+                            <h4 class="text-center">{{movie.title}}</h4>
+                            <p class="text-center"><strong>Release Date :
+                                </strong><br>{{movie.release_date | date: 'MMMM d, y'}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

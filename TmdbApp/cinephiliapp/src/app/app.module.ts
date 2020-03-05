@@ -18,7 +18,7 @@ import { UpcomingMovieComponent } from './upcoming-movie/upcoming-movie.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
