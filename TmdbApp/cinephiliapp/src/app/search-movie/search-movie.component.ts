@@ -17,7 +17,6 @@ export class SearchMovieComponent implements OnInit {
   searchMovie(query: string){
     console.log(query)
     this.tmdbService.callSearch(query);
-    this.router.navigate(["/search"]);
   }
 
   ngOnInit(): void {

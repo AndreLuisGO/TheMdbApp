@@ -1,3 +1,15 @@
 .movie-detail{
  margin: 35px 15px;
 }
+
+.list-group{
+    text-align: justify;
+}
+
+.btn-genre{
+    margin: 5px;
+}
+
+.card-overview{
+    min-height: 30%;
+}

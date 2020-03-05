@@ -8,7 +8,7 @@ import { TmdbService } from '../tmdb.service';
   providers: [TmdbService]
 })
 export class UpcomingMovieComponent implements OnInit {
-
+  page: number = 1
   movies;
 
   constructor(private tmdbService: TmdbService) { }
@@ -25,8 +25,22 @@ export class UpcomingMovieComponent implements OnInit {
 
   }
 
+  nextPage(){
+    if(this.page < this.movies.total_pages){
+    this.page = this.page + 1;
+    this.getUpcomingMovies(this.page);
+    }
+  }
+
+  previousPage(){
+    if(this.page > 1){
+      this.page = this.page - 1;
+      this.getUpcomingMovies(this.page);
+      }
+  }
+
   ngOnInit() {
-    this.getUpcomingMovies(1);
+    this.getUpcomingMovies(this.page);
   }
 
 }
