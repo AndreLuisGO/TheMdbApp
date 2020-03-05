@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,9 @@ export class TmdbService {
   private movieRoute = "/movie/"
   private upcomingRoute = "upcoming/";
   private searchRoute = "/search";
-  private pageRoute = "?page="
+  private pageRoute = "?page=";
+  private searchSubject = new BehaviorSubject<string>(null);
+  searchTerm = this.searchSubject.asObservable();
   
   constructor(private http: HttpClient) { }
 
@@ -27,5 +30,10 @@ export class TmdbService {
   searchMovie(term: string) {
     const apiUrl = this.baseUrl + this.searchRoute + this.movieRoute + term + this.pageRoute + 1;
     return this.http.get(apiUrl);
+  }
+
+  callSearch(query:string)
+  {
+    this.searchSubject.next(query);
   }
 }

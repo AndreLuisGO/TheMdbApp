@@ -1,0 +1,30 @@
+<div *ngIf="movies" else no_result>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>Search Results: </h3>
+        </div>
+        <div class="panel-body">
+            <div *ngIf="movies" #ShowResults else #NoResults class="wrapper">
+                <div class="container">
+                    <div class="row " #ShowResults>
+                        <div *ngFor="let movie of movies.results" class="col-xl-2 col-lg-3 col-md-4 col-sm-12 data-div">
+                            <a href="#" routerLink="/movie/{{movie.id}}">
+                                <img *ngIf="movie.poster_path" class="img-thumbnail"
+                                    src="https://image.tmdb.org/t/p/w185/{{movie.poster_path}}">
+                                <img *ngIf="!movie.poster_path" class="img-thumbnail"
+                                    src="http://http://ddbu.billiardport.com/img/posters/no_poster_available.jpg">
+                            </a>
+                            <h4 class="text-center">{{movie.title}}</h4>
+                            <p class="text-center"><strong>Release Date :
+                                </strong><br>{{movie.release_date | date: 'MMMM d, y'}}</p>
+                        </div>
+                    </div>
+                    <div class="row" #NoResults>
+                        <h3>No results that match your search terms</h3>
+                        <p><strong>Please try again with other term.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
