@@ -11,8 +11,6 @@ export class TmdbService {
   private upcomingRoute = "upcoming/";
   private searchRoute = "/search";
   private pageRoute = "?page=";
-  private searchSubject = new BehaviorSubject<string>(null);
-  searchTerm = this.searchSubject.asObservable();
   
   constructor(private http: HttpClient) { }
 
@@ -27,13 +25,8 @@ export class TmdbService {
     return this.http.get(apiUrl);
   }
 
-  searchMovie(term: string) {
-    const apiUrl = this.baseUrl + this.searchRoute + this.movieRoute + term + this.pageRoute + 1;
+  searchMovie(term: string, page: number) {
+    const apiUrl = this.baseUrl + this.searchRoute + this.movieRoute + term + this.pageRoute + page;
     return this.http.get(apiUrl);
-  }
-
-  callSearch(query:string)
-  {
-    this.searchSubject.next(query);
   }
 }
