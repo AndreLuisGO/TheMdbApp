@@ -7,6 +7,11 @@ A Simple Upcoming Movies Web App
 - Movie Details: Check release date, poster, genre and overview.
 - Fully populated by The Movie Database: the greatest community for Movies and TV.
 
+### Live Links (on Azure Websites)
+
+Frontend Web App: [Cinephilliapp](https://themdbapp.azurewebsites.net/)
+
+Backend API Swagger : [TheMdbService](https://tmdbservice.azurewebsites.net/index.html)
 
 ## Technologies
  
@@ -29,11 +34,7 @@ Since the backend was a simple API to redirect calls from the web app to a third
 
 The frontend client landing page uses the fetched data to populate the list of upcoming movies and paginate them. If a click is performed on a movie image, the app sends another POST request to the backend service looking for the movie details (identified by the movie ID).
 
-### Links
 
-Frontend Web App: [Cinephilliapp](https://themdbapp.azurewebsites.net/)
-
-Backend API Swagger : [TheMdbService](https://tmdbservice.azurewebsites.net/index.html)
 
 #### Repository folder structure　
 
