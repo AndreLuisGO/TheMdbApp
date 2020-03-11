@@ -12,7 +12,7 @@ A Simple Upcoming Movies Web App
  
 Full stack is deployed on Microsoft Azure Services
  
-#####Frontend app (Cinephiliapp) :
+##### Frontend app (Cinephiliapp) :
 - Angular 9
 - Node / NPM 10.16.3
 - Bootstrap 4
@@ -23,19 +23,19 @@ Full stack is deployed on Microsoft Azure Services
 - TheMovieDB API
 
 
-##Architecture and Pattern
+## Architecture and Pattern
 
 Since the backend was a simple API to redirect calls from the web app to a third party API service, a middleware layer was created. The requests comes through a controller which calls to a service layer where all the business logic is. The service then calls the external API service using simple http client requests, retrieving the JSON data and forwarding it to the frontend client.
 
 The frontend client landing page uses the fetched data to populate the list of upcoming movies and paginate them. If a click is performed on a movie image, the app sends another POST request to the backend service looking for the movie details (identified by the movie ID).
 
-###Links
+### Links
 
 Frontend Web App: [Cinephilliapp](https://themdbapp.azurewebsites.net/)
 
 Backend API Swagger : [TheMdbService](https://tmdbservice.azurewebsites.net/index.html)
 
-####Repository folder structure　
+#### Repository folder structure　
 
 ```javascript
 📦TheMdbApp        ---> This Git repo
@@ -48,15 +48,15 @@ Backend API Swagger : [TheMdbService](https://tmdbservice.azurewebsites.net/inde
 
 Just git clone this repository and go to your cloned git folder.
 
-#####After cloning:
+##### After cloning:
 
-######Running bakend service: 
+###### Running bakend service: 
 1. navigate to `/TmdbService` 
 2. open the .sln file with Visual Studio,
 3. build and run the **TmdbService**.
 4. Service will be running on your localhost and you should be able to see the swagger api page on your browser.
 
-######Running frontend app:
+###### Running frontend app:
 
 1. navigate to `/TmdbApp/cinephiliapp` 
 2. Type `npm start` on your terminal. 
