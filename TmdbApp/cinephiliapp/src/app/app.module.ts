@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { SearchMovieComponent } from './search-movie/search-movie.component';
 import { UpcomingMovieComponent } from './upcoming-movie/upcoming-movie.component';
-import { SearchResultsComponent } from './search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +14,11 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     MovieDetailsComponent,
     SearchMovieComponent,
     UpcomingMovieComponent,
-    SearchResultsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

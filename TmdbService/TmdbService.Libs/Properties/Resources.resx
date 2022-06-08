@@ -117,4 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="apiKey" xml:space="preserve">
+    <value>1f54bd990f1cdfb230adb312546d765d</value>
+  </data>
+  <data name="baseUrl" xml:space="preserve">
+    <value>https://api.themoviedb.org/3/</value>
+  </data>
 </root>
